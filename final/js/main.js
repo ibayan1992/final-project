@@ -166,7 +166,7 @@ createRestaurantHTML = (restaurant) => {
   image.tabIndex=0;
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
   name.tabIndex=0;
   li.append(name);
@@ -185,6 +185,8 @@ createRestaurantHTML = (restaurant) => {
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.setAttribute('aria-label', 'View Details');
+  more.setAttribute('role', 'button');
+  more.setAttribute('aria-pressed', 'false');
   li.append(more);
 
   return li;
